@@ -35,9 +35,8 @@ class BertopicModeling:
 
         # Step 6 - (Optional) Fine-tune topic representations using KeyBERTInspired
         # self.representation_model = KeyBERTInspired()
-        # generator = pipeline('text2text-generation', model='google/flan-t5-base')
-        
-        generator = pipeline('text2text-generation', model="microsoft/Phi-3.5-mini-instruct")
+        generator = pipeline('text2text-generation', model='google/flan-t5-base')
+        # generator = pipeline('text2text-generation', model="microsoft/Phi-3.5-mini-instruct")
         self.representation_model = TextGeneration(generator)
 
         # Initialize BERTopic model
