@@ -1,0 +1,39 @@
+# Anaconda/Miniconda environment files
+*.conda
+*.env
+*.env.yml
+.env/
+.conda/
+
+# Jupyter/IPython checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment directories
+venv/
+env/
+envs/
+.venv/
+.ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Editor-specific files (for common editors like VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Test output
+*.pytest_cache/
+.coverage
+nosetests.xml
+coverage.xml
+*.hypothesis/
