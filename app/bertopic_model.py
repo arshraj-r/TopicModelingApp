@@ -13,7 +13,7 @@ prompt = "I have a topic described by the following keywords: [KEYWORDS]. Based 
 # Create your representation model
 
 
-class BertopicModeling:
+class TopicModeling:
     def __init__(self):
         """
         Initializes the TopicModeling class with the necessary models for BERTopic.
