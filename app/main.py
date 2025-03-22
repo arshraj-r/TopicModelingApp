@@ -18,13 +18,15 @@ def main():
         
         # Display the first few rows of the CSV
         st.write("Input Data head:")
-        st.dataframe(df.head())
+        st.dataframe(df.head(2))
 
         # Display the column names and ask the user to select a column
         columns = df.columns.tolist()
         selected_column = st.selectbox("Select a column for topic modeling", columns)
+
+        start_button = st.button("Start Topic Modeling")
         
-        if selected_column:
+        if start_button and selected_column != "":
             st.write(f"Performing topic modeling on the '{selected_column}' column.")
         
             # Perform topic modeling on the text column
