@@ -1,4 +1,4 @@
-# TopicModelingToolkit
+# TopicModelingApp
 
 **TopicModelingApp** is an interactive web application designed for topic modeling using a variety of algorithms, including **BERTopic**, **LDA**, and **scikit-learn**. It allows users to upload text data, run topic modeling, and visualize the extracted topics in an easy-to-use interface built with **Streamlit**. The app also supports cloud deployment via **Docker** and is intended to be easily deployed on cloud platforms such as **Google Cloud**, **AWS**, or **Kubeflow**.
 
@@ -16,15 +16,6 @@
 ---
 
 ## Installation
-
-### Prerequisites
-
-Before running the app locally, you need to have the following installed:
-
-- **Python 3.8+**
-- **Docker** (for containerization and deployment)
-- **Streamlit** (for the app's front-end)
-- **FastAPI** (for optional backend API)
 
 ### Local Installation
 
