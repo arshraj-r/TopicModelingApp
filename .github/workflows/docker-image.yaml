@@ -29,4 +29,4 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push arshraj/opic-modeling-streamlit:latest  # Replace with your Docker Hub repo
+          docker push arshraj/topic-modeling-streamlit:latest  # Replace with your Docker Hub repo
