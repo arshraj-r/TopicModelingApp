@@ -7,7 +7,7 @@ import plotly.express as px
 import plotly.io as pio
 
 def main():
-    st.title("Topic Modeling Streamlit App")
+    st.title("🤖 BERTopic Modeling")
     
     # Upload CSV file
     uploaded_file = st.file_uploader("Upload your CSV file", type="csv")
@@ -57,20 +57,6 @@ def main():
                 file_name=output_filename,
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
-
-            fig1 = model.visualize_topics()  # Scatter plot of topics
-            fig2 = model.visualize_barchart()  # Topic hierarchy (tree)
-            fig3 = model.visualize_hierarchy()  # Documents scatter plot
-
-            # Plot the visualizations using Streamlit
-            st.subheader("Topic Visualization (Scatter Plot)")
-            st.plotly_chart(fig1)  # Display the scatter plot of topics
-
-            st.subheader("Topic Barchart")
-            st.plotly_chart(fig2)  # Display the topic hierarchy
-
-            st.subheader("Topic Hierarchy")
-            st.plotly_chart(fig3)  
 
 # Run the app
 if __name__ == "__main__":
