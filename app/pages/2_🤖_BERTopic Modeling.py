@@ -5,6 +5,14 @@ from utils import save_to_excel
 import datetime  
 import plotly.express as px
 import plotly.io as pio
+from bertopic_params import get_bertopic_params 
+
+st.set_page_config(
+    page_title="BERTopic Modeling",
+    page_icon="🤖",
+    layout="wide"
+)
+
 
 def main():
     st.title("🤖 BERTopic Modeling")
@@ -23,6 +31,8 @@ def main():
         # Display the column names and ask the user to select a column
         columns = df.columns.tolist()
         selected_column = st.selectbox("Select a column for topic modeling", columns)
+        
+        params = get_bertopic_params()
 
         start_button = st.button("Start Topic Modeling")
         

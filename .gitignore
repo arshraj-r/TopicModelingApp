@@ -24,9 +24,10 @@ dist/
 .vscode/
 .idea/
 
-# System files
-.DS_Store
-Thumbs.db
+#pycache
+__pycache__/
+*.pyc
+*.pyo
 
 # Log files
 *.log

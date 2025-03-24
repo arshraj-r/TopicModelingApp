@@ -3,12 +3,13 @@ import pandas as pd
 import sys
 import os
 import xlsxwriter
+from LDA_params import get_lda_params
 
 from LDA_model import LDATopicModel
 
 st.set_page_config(
     page_title="LDA Topic Modeling",
-    page_icon="💬",
+    page_icon="📖",
     layout="wide"
 )
 
@@ -18,17 +19,17 @@ st.title("📖 LDA Topic Modeling")
 uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 # num_topics = st.number_input("Enter number of topics", min_value=2, max_value=20, value=5)
 
-num_topics = st.slider("Select the number of topics", min_value=2, max_value=30, value=5, step=1)
-st.write(f"You selected: {num_topics} topics")
+
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     columns = df.columns.tolist()
     selected_column = st.selectbox("Select a column for topic modeling", columns)
+    params = get_lda_params()
     start_button = st.button("Start Topic Modeling")
 
     if start_button and selected_column:
-        lda_model = LDATopicModel(num_topics=num_topics)
+        lda_model = LDATopicModel(num_topics=params["n_components"])
         topics, doc_topics, topic_probabilities = lda_model.fit(df[selected_column], return_doc_topics=True)
 
         # Display identified topics
