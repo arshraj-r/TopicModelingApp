@@ -3,7 +3,7 @@ import pandas as pd
 import sys
 import os
 import xlsxwriter
-from LDA_params import get_lda_params
+from utils import get_lda_params
 
 from LDA_model import LDATopicModel
 
@@ -26,9 +26,15 @@ if uploaded_file is not None:
     columns = df.columns.tolist()
     selected_column = st.selectbox("Select a column for topic modeling", columns)
     params = get_lda_params()
+    
+
     start_button = st.button("Start Topic Modeling")
 
     if start_button and selected_column:
+        st.subheader("The selected hyper parameters are:")
+        for key, value in params.items():
+            st.write(f"**{key}:** {value if value is not None else 'Learned by Model'}") #
+
         lda_model = LDATopicModel(num_topics=params["n_components"])
         topics, doc_topics, topic_probabilities = lda_model.fit(df[selected_column], return_doc_topics=True)
 

@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
-from bertopic_model import TopicModeling
-from utils import save_to_excel
+from BERTopic_model import TopicModeling
+from utils import save_to_excel, get_bertopic_params
 import datetime  
 import plotly.express as px
 import plotly.io as pio
-from bertopic_params import get_bertopic_params 
 
 st.set_page_config(
     page_title="BERTopic Modeling",
