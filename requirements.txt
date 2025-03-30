@@ -1,3 +1,4 @@
+torch
 kaleido
 streamlit
 scikit-learn
